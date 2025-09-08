@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+*.pyo
+
+# Environments
+.venv/
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project outputs
+checkpoints/
+outputs/
+
+# Allow placeholder keep files to be tracked
+!checkpoints/.gitkeep
+!outputs/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
