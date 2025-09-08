@@ -4,9 +4,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from ..utils import VOCAB_SIZE
-
-
 class MiniMusicTransformer(nn.Module):
     """A tiny autoregressive Transformer LM with learned absolute positions.
     Designed to be lightweight and easy to train on JSB chorales tokenized as note ids.
@@ -14,7 +11,7 @@ class MiniMusicTransformer(nn.Module):
 
     def __init__(
         self,
-        vocab_size: int = VOCAB_SIZE,
+        vocab_size: int = 133,  # 5 special tokens + 128 pitches
         d_model: int = 256,
         n_heads: int = 4,
         n_layers: int = 4,

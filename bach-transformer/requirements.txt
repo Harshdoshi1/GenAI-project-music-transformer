@@ -6,3 +6,4 @@ tqdm
 pretty_midi
 music21
 matplotlib
+gradio
