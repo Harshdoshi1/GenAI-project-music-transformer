@@ -3,3 +3,4 @@ numpy>=1.21.0
 tqdm>=4.64.0
 pretty_midi>=0.2.9
 gradio>=4.0.0
+pydub>=0.25.1
