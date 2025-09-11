@@ -7,12 +7,25 @@ import os
 def install_requirements():
     """Install required packages."""
     print("Installing dependencies...")
+    packages = ["torch", "numpy", "tqdm", "pretty_midi", "gradio"]
+    
+    for package in packages:
+        try:
+            print(f"Installing {package}...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package], 
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except subprocess.CalledProcessError:
+            print(f"⚠️ Failed to install {package}, trying to continue...")
+    
+    # Test imports
     try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
-        print("✅ Dependencies installed successfully!")
+        import torch
+        import gradio
+        import pretty_midi
+        print("✅ Core dependencies installed successfully!")
         return True
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Failed to install dependencies: {e}")
+    except ImportError as e:
+        print(f"❌ Missing dependency: {e}")
         return False
 
 def check_data_file():

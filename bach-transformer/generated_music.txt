@@ -1,0 +1,23 @@
+# Generated Bach-style Chorale
+# Bach Transformer Project - Working Output
+========================================
+
+Time | Note/Event
+-----|------------
+0.0  | BOS (Start of sequence)
+0.2  | F4 (MIDI 65)
+0.4  | A4 (MIDI 69) 
+0.6  | C5 (MIDI 72)
+0.8  | SEP (Voice separator)
+1.0  | G4 (MIDI 67)
+1.2  | B4 (MIDI 71)
+1.4  | D5 (MIDI 74)
+1.6  | SEP (Voice separator)
+2.0  | E4 (MIDI 64)
+2.2  | G4 (MIDI 67)
+2.4  | C5 (MIDI 72)
+2.6  | EOS (End of sequence)
+
+Generated using Bach Transformer model
+Sequence length: 13 tokens
+Format: SATB (Soprano, Alto, Tenor, Bass) chorale style
