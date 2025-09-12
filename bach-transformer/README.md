@@ -86,6 +86,21 @@ python app.py
 ```
 Then open http://localhost:7860 in your browser.
 
+### Audio Conversion
+Convert generated music text to MIDI and MP3:
+```bash
+# Convert to MIDI
+python -m src.txt_to_audio --input outputs/generated_music.txt --midi_out outputs/generated.mid
+
+# Convert with custom settings
+python -m src.txt_to_audio --input generated_music.txt --midi_out my_music.mid --mp3_out my_music.mp3 --duration 0.5 --velocity 120
+```
+
+**Requirements for MP3 export:**
+- Install ffmpeg: https://ffmpeg.org/download.html (add to PATH on Windows)
+- Ubuntu: `sudo apt install ffmpeg`
+- macOS: `brew install ffmpeg`
+
 ### Testing
 ```bash
 python tests/test_smoke.py
@@ -97,3 +112,4 @@ python tests/test_smoke.py
 - The loader converts SATB chorales into sequences with tokens: PAD=0, BOS=1, EOS=2, SEP=3, REST=4, pitches=5-132.
 - Each timestep is encoded as S,A,T,B,SEP pattern.
 - Outputs are saved to `outputs/`. Checkpoints are saved under `checkpoints/`.
+- **Audio Export**: Generated music text files can be converted to playable MIDI/MP3 using `src/txt_to_audio.py`.
